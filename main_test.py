@@ -7,7 +7,7 @@ import re
 def test_main_1():
     captureOut = io.StringIO()
     sys.stdout = captureOut
-    datastr = '1 2 3 4 5\n2'
+    datastr = '5 4 3 2 1\n1'
     sys.stdin = io.StringIO(datastr)
 
     main.main()
@@ -24,7 +24,11 @@ def test_main_1():
     # res = re.search(regex_string, main.evenlist)
     # assert res != None
     # print(res.group())
-    assert main.main.ithmin == 2
+    assert main.main.numbers[0] == 1
+    assert main.main.numbers[1] == 4
+    assert main.main.numbers[2] == 3
+    assert main.main.numbers[3] == 2
+    assert main.main.numbers[4] == 5
 
 
 def test_main_2():
@@ -47,4 +51,8 @@ def test_main_2():
     # res = re.search(regex_string, main.evenlist)
     # assert res != None
     # print(res.group())
-    assert main.main.ithmin == 10
+    assert main.main.numbers[0] == 0
+    assert main.main.numbers[1] == 5
+    assert main.main.numbers[2] == 10
+    assert main.main.numbers[3] == 15
+    assert main.main.numbers[4] == 25

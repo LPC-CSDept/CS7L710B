@@ -11,7 +11,8 @@ def main():
 
     # Code your program here
 
-    print('The ith min val: ', main.ithmin)
+    print(main.numbers)
+
 ##
 
 
